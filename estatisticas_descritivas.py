@@ -25,6 +25,15 @@ print(f'3º Quartil: {quartil_3}')
 maximo = df['qtdPontos'].max()
 print(f'Máximo: {maximo}')
 
+variancia = df['qtdPontos'].var()
+print(f'Variânca: {variancia}')
+
+desvio = df['qtdPontos'].std()
+print(f'Desvio Padrão: {desvio}')
+
+amplitude = df['qtdPontos'].max() - df['qtdPontos'].min()
+print(f'Amplitude: {amplitude}')
+
 df['qtdPontos'].describe().round(2)
 # %%
 
@@ -40,4 +49,3 @@ usuarios = df.groupby(['idUsuario']).agg(
 usuarios
 # %%
 usuarios[["idTransacao","qtdPontos"]].describe().round(2)
-# %%
